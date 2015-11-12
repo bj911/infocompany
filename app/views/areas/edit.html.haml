@@ -1,0 +1,7 @@
+=form_for @area, url: area_path(@area.id), method: :put  do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name
+  .form-group
+    = f.button 'Обновить'
+    = link_to 'Назад', :back

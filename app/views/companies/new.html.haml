@@ -1,0 +1,28 @@
+= form_for @company, url: area_companies_path(@area.id) do |f|
+  %p= link_to 'Создать Холдинг', new_region_holding_path(@area.region.id), class: 'btn btn-success'
+  .form-group
+    .col-sm-2.control-label
+      = f.label :name, 'Имя:'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+
+    .col-sm-2.control-label
+      = f.label :color, 'Цвет:'
+    .col-sm-10
+      = f.text_field :color, class: 'form-control'
+
+    .col-sm-2.control-label
+      = f.label :address, 'Адрес:'
+    .col-sm-10
+      = f.text_field :address, class: 'form-control'
+
+    .col-sm-2.control-label
+      = f.label :description, 'Описание:'
+    .col-sm-10
+      = f.text_field :description, class: 'form-control'
+      = f.hidden_field :area_id, value: @area.id
+
+  .form-group
+    .col-sm-12
+      = f.submit 'Создать'
+      = link_to 'Назад', :back, class: 'btn btn-default'

@@ -1,0 +1,26 @@
+%h1= "Компании. #{@area.name}"
+%table.table.table-striped
+  %tr
+    %th
+    %th
+      %strong Имя
+    %th
+      %strong Холдинг
+    %th
+      %strong Договор
+    %th
+      %strong Инфо
+  -@companies.each do |company|
+    %tr
+      %td
+        = button_to 'Изменить', edit_company_path(company.id), method: :get
+      %td
+        = company.name
+      %td
+        = 'holding'
+      %td
+        = 'dogovor'
+      %td
+        = 'peoples'
+
+= button_to 'Добавить', new_area_company_path(@area.id), method: :get

@@ -1,0 +1,16 @@
+%h1 Области
+%table.table.table-striped
+  %tr
+    %th
+    %th
+      %strong Имя
+    %th
+      %strong Районы
+  -@regions.each do |region|
+    %tr
+      %td
+        = button_to 'Просмотреть', region_areas_path(region.id), method: :get
+      %td
+        = region.name
+      %td
+        = region.count_of_areas

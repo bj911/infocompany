@@ -1,0 +1,23 @@
+%h1= "Районы. #{@region.name}"
+%table.table.table-striped
+  %tr
+    %th
+    %th
+    %th
+      %strong Имя
+    %th
+      %strong Компании
+  -@areas.each do |area|
+    %tr
+      %td
+        -#= button_to 'Изменить', edit_region_area_path(@region.id, area.id), method: :get
+        = button_to 'Изменить', edit_area_path(area.id), method: :get
+      %td
+        -#= button_to 'Просмотреть', region_area_path(@region.id, area.id), method: :get
+        = button_to 'Просмотреть', area_companies_path(area.id), method: :get
+      %td
+        = area.name
+      %td
+        = area.count_of_companies
+
+= button_to 'Добавить', new_region_area_path(@region.id), method: :get
